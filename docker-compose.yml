@@ -1,0 +1,21 @@
+services:
+  db:
+    image: postgres:17
+    container_name: borrowit-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-admin}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-admin}
+      POSTGRES_DB: ${POSTGRES_DB:-borrow_it}
+    ports:
+      - "5432:5432"
+    volumes:
+      - borrowit_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-admin} -d ${POSTGRES_DB:-borrow_it}"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+volumes:
+  borrowit_pgdata:
