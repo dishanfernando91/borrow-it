@@ -5,7 +5,7 @@ import users from "./users";
 import items from "./items";
 import loans from "./loans";
 
-export const relations = defineRelations({ users, items, loans }, () => ({}))
+export const relations = defineRelations({ users, items, loans }, () => ({}));
 
 export const userTable = users;
 export const itemsTable = items;

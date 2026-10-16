@@ -3,6 +3,7 @@
     "target": "ES2022",
     "module": "CommonJS",
     "moduleResolution": "node",
+    "ignoreDeprecations": "6.0",
     "lib": ["ES2022"],
     "outDir": "dist",
     "rootDir": ".",
@@ -13,6 +14,6 @@
     "resolveJsonModule": true,
     "noUncheckedIndexedAccess": true
   },
-  "include": ["server.ts", "src/**/*.ts"],
+  "include": ["src/server.ts", "src/**/*.ts"],
   "exclude": ["node_modules", "dist"]
 }
