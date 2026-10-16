@@ -5,7 +5,6 @@ import {
   boolean,
   timestamp,
 } from "drizzle-orm/pg-core";
-// import { createSelectSchema } from "drizzle-orm/zod";
 
 export const itemsTable = pgTable("items", {
   id: integer().primaryKey().generatedAlwaysAsIdentity(),
@@ -18,5 +17,3 @@ export const itemsTable = pgTable("items", {
 });
 
 export default itemsTable;
-
-// export default createSelectSchema(itemsTable);
